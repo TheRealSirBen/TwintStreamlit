@@ -52,7 +52,8 @@ st.set_page_config(
 )
 
 # Heading
-st.header("CUT Group 7 Twitter Intell💡gence Tool")
+st.header('Twitter Open Source Intelligence Tool')
+st.write("CUT: Group 7")
 
 with st.sidebar:
     form = st.form(key="user_form")
@@ -82,28 +83,3 @@ if len(tweets_data.data) not in [0, None]:
         ]
         display_df = tweets_df[tweets_columns]
         st.dataframe(display_df)
-
-    # Display Links and Media
-    with tab_media:
-        st.write('Media Data')
-        tweet_id, action, photos, videos, urls = st.columns(5)
-        # print(tweets_df.columns)
-
-        idx_photos = []
-        for idx in tweets_df.index:
-            if not tweets_df['photos'][idx] == []:
-                idx_photos.append(idx)
-
-        for index in idx_photos:
-            with tweet_id:
-                st.write(index)
-
-            with action:
-                st.button(key='to_tweet_{}'.format(index), label='View Tweet', type='secondary')
-
-            with photos:
-                if st.button(key='to_photos_{}'.format(index), label='View Photos', type='secondary'):
-                    tweets_data.get_images(index)
-
-            with videos:
-                st.button(key='to_videos{}'.format(index), label='View Videos', type='secondary')
