@@ -53,7 +53,7 @@ st.set_page_config(
 
 # Heading
 st.header('Twitter Open Source Intelligence Tool')
-st.write("CUT: Group 7")
+st.write("Chinhoyi University of Technology")
 
 with st.sidebar:
     form = st.form(key="user_form")
